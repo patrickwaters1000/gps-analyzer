@@ -110,8 +110,6 @@
                (dec num-intervals)
                new-points-lists)))))
 
-(defn run [input-file num-intervals interval-distance])
-
 (def cli-spec
   [{:short "-f"
     :long "--input-file"
