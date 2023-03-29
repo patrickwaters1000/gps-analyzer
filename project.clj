@@ -6,6 +6,6 @@
   :dependencies [[org.clojure/clojure "1.9.0"]
                  [clj-time "0.15.2"]
                  [cheshire "5.10.0"]]
-  :main ^:skip-aot gps-data.core
+  :main ^:skip-aot gps-data.api
   :target-path "target/%s"
   :profiles {:uberjar {:aot :all}})
