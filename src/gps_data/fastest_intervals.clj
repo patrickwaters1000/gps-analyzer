@@ -134,5 +134,13 @@
                (fastest-intervals num-intervals
                                   interval-distance)
                (map #(update % :pace core/pace->str))
-               (map #(dissoc % :start-time)))]
-    (pprint/pprint fastest-intervals)))
+               (map #(dissoc % :start-time)))
+        total-distance (->> fastest-intervals
+                            (map :distance)
+                            (reduce + 0.0))
+        total-time (->> fastest-intervals
+                        (map :interval-time)
+                        (reduce + 0.0))
+        avg-pace (core/pace->str (/ total-time total-distance))]
+    (pprint/pprint fastest-intervals)
+    (println (format "Average pace: %s" avg-pace))))

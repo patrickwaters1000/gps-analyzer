@@ -75,5 +75,7 @@
 
 (defn pace->str [pace]
   (let [minutes (int (quot pace 60))
-        seconds (mod pace 60)]
-    (format "%d:%.2f" minutes seconds)))
+        seconds (mod pace 60)
+        seconds-int (int seconds)
+        hundredths (int (* 100 (- seconds seconds-int)))]
+    (format "%d:%02d.%02d" minutes seconds-int hundredths)))
